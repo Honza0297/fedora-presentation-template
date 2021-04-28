@@ -7,8 +7,7 @@ I am (mostly) NOT an author of the slides, they are based on work of
 * Fedora design team official slides:  https://github.com/fedoradesign/fedora-presentation-template
 * lruzicka's fork: https://github.com/lruzicka
 
-![title slide](title.pdf)
-![blankpage](blank.pdf.png)
+![title slide](titlepage.png)
 
 ## Changelog
 
