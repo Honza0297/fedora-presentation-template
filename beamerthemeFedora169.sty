@@ -1,0 +1,45 @@
+% Copyright 2007 by Till Tantau
+% Copyright 2015 by Vedran Mileti\'c, Joseph Wright
+% Copyright 2021 Jan Beran
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+
+\newif\ifbeamer@sidebartab
+\newif\ifbeamer@sidebardark
+
+\beamer@sidebartabfalse
+\beamer@sidebardarkfalse
+
+\PassOptionsToPackage{width=2cm}{beamerouterthemesidebar}
+
+\DeclareOptionBeamer{width}{\PassOptionsToPackage{width=#1}{beamerouterthemesidebar}}
+
+\ProcessOptionsBeamer
+
+\mode<presentation>
+\RequirePackage{tikz}
+\useinnertheme{Fedora169}
+\useoutertheme[right,height=0pt]{Fedora169}
+
+\usecolortheme{Fedora169}  
+\usebeamercolor{sidebar}
+\setbeamertemplate{sidebar canvas right}[vertical shading][top=bgblue,bottom=bgaqua]
+
+% Hacky ugly way, but dunno how to 
+\setbeamertemplate{section in toc}{ 
+\textcolor{fblue}{$\blacktriangleright$}\:\:\inserttocsection
+}
+\setbeamertemplate{subsection in toc}{ 
+\qquad \textcolor{fblue}{$\blacktriangleright$}\:\:\inserttocsubsection
+}
+\ifbeamer@sidebartab
+  \usecolortheme{Fedora169}
+\fi
+
+\mode
+<all>
+
